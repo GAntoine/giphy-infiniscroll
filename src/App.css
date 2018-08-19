@@ -1,0 +1,29 @@
+.app {
+  text-align: center;
+}
+
+.app-header {
+  height: 100vh;
+  width: 100%;
+
+  background-image: url(https://media.giphy.com/media/l1J3OTuefx2MopjFe/source.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+}
+
+.app-header-text {
+  margin: auto;
+  width: 100%;
+
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 6em;
+  font-family: Helvetica;
+
+  color: #fff;
+  background: #333;
+  opacity: 0.8;
+}
