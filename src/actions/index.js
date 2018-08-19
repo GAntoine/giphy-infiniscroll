@@ -7,9 +7,17 @@ export function fetchGifs() {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        dispatch(fetchSuccess(json.gifs));
-        return json.gifs;
+        const gifs = json.data.map((gif) => {
+          return {
+            id: gif.id,
+            username: gif.username,
+            url: gif.images.original.url,
+          }
+        })
+        dispatch(fetchSuccess(gifs));
+        return gifs;
       })
+      .finally(() => page++)
   }
 }
 

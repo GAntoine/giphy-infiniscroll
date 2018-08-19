@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
+import './Gif.css'
+
 const Gif = ({ url, username }) => {
   return (
-    <img
-      src={url}
-      alt={username}
-    >
-    </img>
+    <div className="gif">
+      <img src={url} alt={username}></img>
+    </div>
   )
 }
 

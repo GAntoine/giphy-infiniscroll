@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import debounce from 'debounce';
 import { connect } from 'react-redux'
-import ListWrapper from '../list_wrapper/ListWrapper';
+import ListWrapper from '../list_wrapper/ListWrapper'
 import { fetchGifs } from '../actions'
 import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    this.onScroll = debounce(this.handleScroll.bind(this), 250);
+    window.addEventListener('scroll', this.onScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll.bind(this));
+    window.removeEventListener('scroll', this.onScroll);
   }
 
-  handleScroll() {
+  handleScroll(event) {
+    if (window.innerHeight + window.pageYOffset < document.body.offsetHeight - 10) return;
     this.props.dispatch(fetchGifs())
   }
 
@@ -22,12 +25,12 @@ class App extends Component {
       <div className="app">
         <div className="app-header">
           <div className="app-header-text">
-            Scroll to begin
+            Scroll down
           </div>
         </div>
-        <p className="app-intro">
+        <div className="app-intro">
           <ListWrapper/>
-        </p>
+        </div>
       </div>
     );
   }

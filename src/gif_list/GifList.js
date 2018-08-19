@@ -1,9 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Gif from '../gif/Gif';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Gif from '../gif/Gif'
+
+import './GifList.css'
 
 const GifList = ({ gifs }) => (
-  <div>
+  <div className="gif-list">
     {gifs.map(gif => (
       <Gif key={gif.id} {...gif} />
     ))}
@@ -13,7 +15,7 @@ const GifList = ({ gifs }) => (
 GifList.propTypes = {
   gifs: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
       username: PropTypes.string.isRequired,
     }).isRequired
