@@ -13,7 +13,7 @@ export function fetchGifs() {
           return {
             id: gif.id,
             username: gif.username,
-            url: gif.images.original.url,
+            url: gif.images.fixed_width.url,
           }
         })
         const columns = chunk(gifs, 5);
