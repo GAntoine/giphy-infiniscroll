@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 
 import './Gif.css'
 
-const Gif = ({ url, username }) => {
+const Gif = ({ url, title }) => {
   return (
     <div className="gif">
-      <img src={url} alt={username}></img>
+      <img src={url} alt={title}></img>
     </div>
   )
 }
 
 Gif.propTypes = {
   url: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default Gif

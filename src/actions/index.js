@@ -12,7 +12,7 @@ export function fetchGifs() {
         const gifs = json.data.map((gif) => {
           return {
             id: gif.id,
-            username: gif.username,
+            title: gif.title,
             url: gif.images.fixed_width.url,
           }
         })

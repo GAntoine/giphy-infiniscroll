@@ -17,7 +17,7 @@ GifColumn.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-      username: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 }
