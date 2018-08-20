@@ -5,7 +5,7 @@ let page = 0;
 
 export function fetchGifs() {
   return dispatch => {
-    return fetch(`https://api.giphy.com/v1/gifs/trending?api_key=WhxxyqBSKtuGtsijYPrE7FdTTekZzi2p&limit=${limit}&offset=${page * limit}&rating=G`)
+    return fetch(`https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=${limit}&offset=${page * limit}&rating=G`)
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
