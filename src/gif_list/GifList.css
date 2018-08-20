@@ -4,3 +4,7 @@
   padding: 1em;
   justify-content: center;
 }
+
+.gif-column {
+  width: 25%;
+}

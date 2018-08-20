@@ -1,4 +1,6 @@
-const limit = 25;
+import chunk from 'chunk'
+
+const limit = 20;
 let page = 0;
 
 export function fetchGifs() {
@@ -14,8 +16,9 @@ export function fetchGifs() {
             url: gif.images.original.url,
           }
         })
-        dispatch(fetchSuccess(gifs));
-        return gifs;
+        const columns = chunk(gifs, 5);
+        dispatch(fetchSuccess(columns));
+        return columns;
       })
       .finally(() => page++)
   }
